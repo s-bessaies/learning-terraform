@@ -1,6 +1,6 @@
 variable endpoint_path {
     type = string
-    default = "/test"
+    default = "test"
 }
 
 variable "myregion" {
