@@ -20,7 +20,7 @@ resource "aws_api_gateway_integration" "integration" {
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.terraform_lambda_func.invoke_arn
   request_templates = {
-    "key1": "$input.params('key1')"
+    "key1": "key1"
   }
 }
 resource "aws_lambda_permission" "apigw_lambda" {
