@@ -1,4 +1,4 @@
-import json
+
 
 def lambda_handler(event, context):
    print(event)
@@ -10,8 +10,8 @@ def lambda_handler(event, context):
             "my_header": "my_value"
         },
         "body": message,
-        "isBase64Encoded": false
+        "isBase64Encoded": False
     }
 
-   return json.dumps(response)
+   return response
    
