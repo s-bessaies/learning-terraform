@@ -60,7 +60,7 @@ data "archive_file" "zip_the_python_code" {
 # Create a lambda function
 # In terraform ${path.module} is the current directory.
 resource "aws_lambda_function" "terraform_lambda_func" {
-  filename      = "${path.module}/python/lambda_function.zip"
+  filename      = "${path.module}/src/lambda_function.zip"
   function_name = "Jhooq-Lambda-Function"
   role          = aws_iam_role.lambda_role.arn
   handler       = "lambda_function.lambda_handler"
