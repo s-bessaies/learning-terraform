@@ -19,9 +19,10 @@ resource "aws_api_gateway_integration" "integration" {
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.terraform_lambda_func.invoke_arn
-  request_templates = {
-    "key1": "key1"
-  }
+#   passthrough_behavior    = alltrue()
+#   request_templates = {
+#     "key1": "$input.params('key1')"
+#   }
 }
 resource "aws_lambda_permission" "apigw_lambda" {
   statement_id  = "AllowExecutionFromAPIGateway"
