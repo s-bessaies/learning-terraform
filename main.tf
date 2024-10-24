@@ -32,11 +32,14 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
       "Action": [
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
-        "logs:PutLogEvents",
-        "bedrock:InvokeModel",
-        "bedrock:InvokeModelWithResponseStream"
+        "logs:PutLogEvents"
       ],
       "Resource": "arn:aws:logs:*:*:*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": "bedrock:InvokeModel"
+      "Resource": "*"
       "Effect": "Allow"
     }
   ]
