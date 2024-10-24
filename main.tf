@@ -38,8 +38,10 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
       "Effect": "Allow"
     },
     {
-      "Action": "bedrock:InvokeModel"
-      "Resource": "*"
+      "Action": [
+        "bedrock:InvokeModel"
+      ],
+      "Resource": "*",
       "Effect": "Allow"
     }
   ]
