@@ -12,7 +12,7 @@ resource "aws_route53_record" "custom_domain_record" {
   type = "CNAME"
   ttl = "300" # TTL in seconds
 
-  records = ["${aws_api_gateway_rest_api.example_api.id}.execute-api.${myregion}.amazonaws.com"]
+  records = ["${aws_api_gateway_rest_api.example_api.id}.execute-api.${var.myregion}.amazonaws.com"]
 
   zone_id = data.aws_route53_zone.my_domain.zone_id
 }
