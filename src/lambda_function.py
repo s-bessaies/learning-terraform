@@ -39,16 +39,17 @@ def lambda_handler(event, context):
                                             accept=input["accept"],
                                             contentType=input["contentType"])
                                             
-        response_body = json.loads(response['body'].read())
+        # response_body = json.loads(response['body'].read())
 
-   response = {
-        "statusCode": 200,
-        "headers": {
-            "my_header": "my_value"
-        },
-        "body": response_body,
-        "isBase64Encoded": False
-    }
+        lambda_response = {
+                "statusCode": 200,
+                "headers": {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                "body": response['body'].read(),
+                "isBase64Encoded": False
+            }
 
-   return response
+   return lambda_response
    
