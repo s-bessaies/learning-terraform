@@ -16,3 +16,10 @@ resource "aws_route53_record" "custom_domain_record" {
 
   zone_id = data.aws_route53_zone.my_domain.zone_id
 }
+
+resource "aws_acm_certificate" "my_api_cert" {
+  domain_name = "api.gpsessions.com"
+  provider = aws  # needs to be in US East 1 region
+  subject_alternative_names = ["api.gpsessions.com"] # Your custom domain
+  validation_method = "DNS"
+}
