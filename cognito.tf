@@ -12,12 +12,12 @@ resource "aws_cognito_user_pool_client" "client" {
   supported_identity_providers = ["COGNITO"]
 
   user_pool_id = aws_cognito_user_pool.pool.id
-#   callback_urls = ["https://example.com"]
-#   logout_urls = ["https://sumeet.life"]
+   callback_urls = ["https://gpsessions.com/login"]
+   logout_urls = ["https://gpsessions.com/logout"]
 }
 
 resource "aws_cognito_user" "user_01" {
   user_pool_id = aws_cognito_user_pool.pool.id
   username = "user01"
-  password = "user@123"
+  password = "USER@123"
 }
