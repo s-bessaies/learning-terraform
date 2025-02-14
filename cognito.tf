@@ -19,5 +19,12 @@ resource "aws_cognito_user_pool_client" "client" {
 resource "aws_cognito_user" "user_01" {
   user_pool_id = aws_cognito_user_pool.pool.id
   username = "user01"
-  password = "USER@123"
+  password = "USER123"
+}
+
+resource "aws_api_gateway_authorizer" "demo" {
+  name = "my_apig_authorizer2"
+  rest_api_id = aws_api_gateway_rest_api.example_api.id
+  type = "COGNITO_USER_POOLS"
+  provider_arns = [aws_cognito_user_pool.pool.arn]
 }
