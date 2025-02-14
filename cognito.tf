@@ -19,7 +19,7 @@ resource "aws_cognito_user_pool_client" "client" {
 resource "aws_cognito_user" "user_01" {
   user_pool_id = aws_cognito_user_pool.pool.id
   username = "user01"
-  password = "USER123"
+  password = "UdFse$1der23"
 }
 
 resource "aws_api_gateway_authorizer" "demo" {
