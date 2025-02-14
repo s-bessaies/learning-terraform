@@ -10,7 +10,8 @@ resource "aws_api_gateway_method" "example_method" {
   rest_api_id   = aws_api_gateway_rest_api.example_api.id
   resource_id   = aws_api_gateway_resource.example_resource.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "COGNITO_USER_POOLS"
+  authorizer_id = aws_api_gateway_authorizer.demo.id
 }
 resource "aws_api_gateway_integration" "integration" {
   rest_api_id             = aws_api_gateway_rest_api.example_api.id
